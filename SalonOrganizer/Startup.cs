@@ -1,10 +1,11 @@
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore; // to use UseMySql
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TheBest.Models;
+using SalonOrganizer.Models;
 
 namespace SalonOrganizer
 {
@@ -25,7 +26,7 @@ namespace SalonOrganizer
       services.AddMvc();
 
       services.AddEntityFrameworkMySql()
-        .AddDbContext<TheBestContext>(options => options
+        .AddDbContext<SalonOrganizerContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
     }
 
