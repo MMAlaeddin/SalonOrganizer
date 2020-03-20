@@ -50,15 +50,19 @@ namespace SalonOrganizer.Controllers
       var thisStylist = _db.Stylists.FirstOrDefault(stylists => stylists.StylistId == id);
       return View(thisStylist);
     }
-    
+    [HttpPost]
+    public ActionResult Edit(Stylist stylist)
+    {
+      _db.Entry(stylist).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
-
-
-    // public ActionResult Details(int id)
-    // {
-    //   Stylist myStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
-    //   myStylist.Clients = _db.Clients.Where(client => client.StylisttId == id);
-    //   return View(myStylist);
-    // }
+    public ActionResult Details(int id)
+    {
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      thisStylist.Clients = _db.Clients.Where(client => client.StylistId == id).ToList();
+      return View(thisStylist);
+    }
   }
 }
