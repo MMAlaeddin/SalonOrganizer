@@ -19,7 +19,7 @@
 @foreach (Client clients in @Model.Clients)
 {
   
-  <li>@Html.ActionLink($"{client.ClientName}", "Details", "Clients", new { id = client.ClientId })</li>
+  <li>@Html.ActionLink($"{clients.ClientName}", "Details", "Clients", new { id = clients.ClientId })</li>
 
 }
 </ul>
