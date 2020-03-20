@@ -31,7 +31,7 @@ namespace SalonOrganizer.Controllers
     {
       _db.Clients.Add(client);
       _db.SaveChanges();
-      return RedirectToAction("Details", "Stylist", new {id = client.StylistId});
+      return RedirectToAction("Index");
     }
     public ActionResult Details(int id)
     {
