@@ -21,8 +21,10 @@ namespace SalonOrganizer.Controllers
       List<Client> model = _db.Clients.ToList();
       return View(model);
     }
-    public ActionResult Create()
+    public ActionResult Create(int id)
     {
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId ==id);
+      ViewBag.Stylist = thisStylist;
       return View();
     }
     [HttpPost]
@@ -30,7 +32,7 @@ namespace SalonOrganizer.Controllers
     {
       _db.Clients.Add(client);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Details", "Stylist", new {id = client.StylistId});
     }
     public ActionResult Details(int id)
     {
