@@ -23,8 +23,7 @@ namespace SalonOrganizer.Controllers
     }
     public ActionResult Create(int id)
     {
-      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId ==id);
-      ViewBag.Stylist = thisStylist;
+      ViewBag.StylistId = new SelectList(_db.Clients, "StylistId", "ClientName");
       return View();
     }
     [HttpPost]
