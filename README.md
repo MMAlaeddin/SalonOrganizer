@@ -1,37 +1,80 @@
-# _{Application Name}_
+# Salon Organizer
+#### March 20, 2020
 
-#### _{Brief description of application}, {Date of current version}_
+ASP.NET core MVC application using Entity Framework Core and MySQL to organize structure of a salon. Search your stylists or clients, add them, remove them or edit them. 
 
-#### By _**{List of contributors}**_
+## Getting Started
 
-## Description
+Download the .zip file and extract all files into directory of your choice OR clone the repository to a directory. Open project directory in preferred text editor.
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+### Prerequisites
 
-## Setup/Installation Requirements
+1. [.NET Framework](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.106-macos-x64-installer) 
+2. Text Editor (Visual Studio Code)
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+### Installing
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+1. Clone the repository:
+    ```
+    git clone https://github.com/MMAlaeddin/SalonOrganizer
+    ```
+2. Change directories into the project working directory:
+    ```
+    cd Salon.Solution/SalonOrganizer
+    ```
+3. Restore all dependencies:
+    ```
+    dotnet restore
+    ```
 
-## Known Bugs
+#### Setup Database
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+4. Run the following commands in MySQL to setup this project Database
+    ```
+    CREATE DATABASE `mariam_alaeddin`;
+    USE mariam_alaeddin;
+    CREATE TABLE `Stylists` (
+        `StylistId` int(11) NOT NULL AUTO_INCREMENT,
+        `StylistName` varchar(255) DEFAULT NULL,
+        `StylistDescription` varchar(255 DEFAULT NULL),
+        PRIMARY KEY (`StylistId`)
+    );
+    CREATE TABLE `Clients` (
+        `ClientId` int(11) NOT NULL AUTO_INCREMENT,
+        `ClientName` varchar(255) DEFAULT NULL,
+        `StylistId` int(11) NOT NULL DEFAULT '0',
+        PRIMARY KEY (`ClientId`)
+    );
 
-## Support and contact details
+    ```
+5. Compile and Run code:
+    ```
+    dotnet build
+    dotnet run
+    ```
+6. Open the locally hosted server in your preferred web browser:
+    ```
+    start http://localhost:5000
+    ```
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+* C#
+* ASP.NET core MVC 2.2
+* Entity Framework Core
+* MySQL + MySQL Workbench version 8.0.15
+* RESTful Routing
+* CRUD Functionality
+* Git
 
-### License
+## Authors
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+* **MARIAM ALAEDDIN** - (https://github.com/MMALAEDDIN)
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
+
+## License
+
+Licensed under the MIT license.
+
+COPYRIGHT 2020 - MARIAM ALAEDDIN
