@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SalonOrganizer.Models.Client
+
+<h4>Add A New Client: </h4>
+
+@using (Html.BeginForm())
+{
+	@Html.LabelFor(model => model.ClientName)
+	@Html.TextBoxFor(model => model.ClientName)
+
+
+	<input type="submit" value="Add Client" class="btn-btn-default" />
+
+}
+<p>@Html.ActionLink("Show all clients", "Index")</p>
