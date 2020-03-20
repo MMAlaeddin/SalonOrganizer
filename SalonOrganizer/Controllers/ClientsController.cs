@@ -23,7 +23,7 @@ namespace SalonOrganizer.Controllers
     }
     public ActionResult Create(int id)
     {
-      ViewBag.StylistId = new SelectList(_db.Clients, "StylistId", "ClientName");
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "StylistName");
       return View();
     }
     [HttpPost]
