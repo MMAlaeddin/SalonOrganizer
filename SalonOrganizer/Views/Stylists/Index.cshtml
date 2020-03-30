@@ -17,6 +17,6 @@
   <button><ul>@Html.ActionLink($"{stylist.StylistName}", "Details", new { id = stylist.StylistId })</ul></button>
 }
 
-
+<p>@Html.ActionLink("Add A Client", "Create", "Clients")</p>
 <p>@Html.ActionLink("Add new stylist", "Create", "Stylists")</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
