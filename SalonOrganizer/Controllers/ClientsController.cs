@@ -41,7 +41,7 @@ namespace SalonOrganizer.Controllers
     public ActionResult Edit(int id)
     {
       var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
-      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "StylistName");
       return View(thisClient);
     }
     [HttpPost]

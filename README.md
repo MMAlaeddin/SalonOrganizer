@@ -36,7 +36,7 @@ Download the .zip file and extract all files into directory of your choice OR cl
     CREATE TABLE `Stylists` (
         `StylistId` int(11) NOT NULL AUTO_INCREMENT,
         `StylistName` varchar(255) DEFAULT NULL,
-        `Description` varchar(255 DEFAULT NULL),
+        `Description` varchar(255) DEFAULT NULL,
         PRIMARY KEY (`StylistId`)
     );
     CREATE TABLE `Clients` (
